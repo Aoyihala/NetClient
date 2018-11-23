@@ -64,7 +64,6 @@ public class BaseCallBack<T> implements Callback<T>
  * 作为eventbus所传递的实体对象的基类
  * 其中实体对象为泛型
  * 并对返回码进行了处理,展示当前网络状态
- * Created by admin on 2018/3/28.
  */
 
 public class BaseEvent<T> {
