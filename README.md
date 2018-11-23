@@ -169,5 +169,5 @@ public class BaseEvent<T> {
 }
 </code></p>
 ### retrofit和eventbus的传送门
-> <a herf="https://github.com/greenrobot/EventBus">eventbus</a>
-> <a herf="https://github.com/square/retrofit">retrofit</a>
+> - EventBus <https://github.com/greenrobot/EventBus>
+> - Retrofit <https://github.com/square/retrofit>
