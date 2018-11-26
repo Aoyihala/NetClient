@@ -12,12 +12,12 @@
 ## 4.部分注解
 ### 类BaseCallBack,基本网络处理回调
 <p><code>
-/**
+/***
  * 该类是将对应继承了BaseEvent的子类传入
  * 每个子类又将数据传入父类的构造方法
  * 也就是直接实现了父类构造方法
- * 并用eventbus开启
- * 子类的作用其实就是个标志
+ * 并用eventbus进行传递
+ * 实体是传递是实例，作用是在请求成功后保存需要的内容，如json序列化后的实体
  */
 
 public class BaseCallBack<T> implements Callback<T>
