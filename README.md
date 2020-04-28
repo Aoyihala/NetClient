@@ -11,53 +11,12 @@
 > - 因为是自用所以不做相关介绍
 ## 4.部分注解
 ### 类BaseCallBack,基本网络处理回调
-<p><code>
-/***
- * 该类是将对应继承了BaseEvent的子类传入
- * 每个子类又将数据传入父类的构造方法
- * 也就是直接实现了父类构造方法
- * 并用eventbus进行传递
- * 实体是传递是实例，作用是在请求成功后保存需要的内容，如json序列化后的实体
- */
-
-public class BaseCallBack<T> implements Callback<T>
-{
-    protected BaseEvent<T> event;                   // 事件
-
-    public <Event extends BaseEvent<T>> BaseCallBack(@NonNull Event event) {
-        this.event = event;
-    }
-
-    /**
-     *
-     *
-     * @param call
-     * @param response 响应
-     */
-    @Override
-    public void onResponse(Call<T> call, Response<T> response) {
-            /*
-            if (result.equals("0"))
-            {
-                //只有0 表示没有内容
-                EventBus.getDefault().post(event.setEvent(response.code(), null));
-            }*/
-            EventBus.getDefault().post(event.setEvent(response.code(), response.body()));
-    }
-
-    /**
-     *
-     *
-     * @param call
-     * @param t 失败原因
-     */
-    @Override
-    public void onFailure(Call<T> call, Throwable t) {
-        EventBus.getDefault().post(event.setEvent(-1,null));
-    }
-}
-</code></p>
-代码很少就全部贴上来了
+ - 该类是将对应继承了BaseEvent的子类传入
+ - 每个子类又将数据传入父类的构造方法
+ - 也就是直接实现了父类构造方法
+ - 并用eventbus进行传递
+ - 作用是在请求成功后保存需要的内容，如json序列化后的实体了  
+ <a  text='BaseCallBack' >https://github.com/Aoyihala/NetClient/blob/master/app/src/main/java/com/easy/west/westclient/api/base/callback/BaseCallBack.java</a>
 ### 类BaseEevent,基础网络请求返回实例
 <p><code>
 /**
