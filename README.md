@@ -16,15 +16,9 @@
  - 也就是直接实现了父类构造方法
  - 并用eventbus进行传递
  - 作用是在请求成功后保存需要的内容，如json序列化后的实体了  
- <a  text='BaseCallBack' >https://github.com/Aoyihala/NetClient/blob/master/app/src/main/java/com/easy/west/westclient/api/base/callback/BaseCallBack.java</a>
+ ![BaseCallBack](https://github.com/Aoyihala/NetClient/blob/master/app/src/main/java/com/easy/west/westclient/api/base/callback/BaseCallBack.java)
 ### 类BaseEevent,基础网络请求返回实例
 <p><code>
-/**
- * 作为eventbus所传递的实体对象的基类
- * 其中实体对象为泛型
- * 并对返回码进行了处理,展示当前网络状态
- */
-
 public class BaseEvent<T> {
     //实体
     private T t;
